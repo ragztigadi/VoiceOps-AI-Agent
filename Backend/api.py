@@ -1,8 +1,9 @@
-from livekit.agents import function_tool, RunContext
+from livekit.agents import function_tool, RunContext, Agent
 import enum
 from typing import Annotated
 import logging
 from db_driver import DatabaseDriver
+from prompts import INSTRUCTIONS
 
 logger = logging.getLogger("user-data")
 logger.setLevel(logging.INFO)
@@ -15,8 +16,9 @@ class CarDetails(enum.Enum):
     Model = "model"
     Year = "year"
 
-class AssistantFnc:
+class AssistantFnc(Agent):
     def __init__(self):
+        super().__init__(instructions=INSTRUCTIONS)
         self._car_details = {
             CarDetails.VIN: "",
             CarDetails.Make: "",
