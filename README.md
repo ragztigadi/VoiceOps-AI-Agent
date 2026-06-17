@@ -149,53 +149,6 @@ Open **http://localhost:5173**, click **Talk to an Agent!**, enter your name, al
 
 ## 📸 Screenshots
 
-### 1. Project Structure
-
-The full VoiceOps-AI workspace in VS Code — the `Backend/` Python services, the `Frontend/` React app under `src/components/`, and the `.gitignore` keeping secrets and virtual environments out of version control.
-
-VoiceOps-AI/
-│
-├── Backend/
-│   ├── __pycache__/
-│   ├── agent.py            # LiveKit voice agent (Gemini realtime model + session)
-│   ├── api.py              # AssistantFnc — agent with @function_tool methods
-│   ├── db_driver.py        # SQLite driver (Car dataclass, lookup/create)
-│   ├── prompts.py          # System instructions & welcome message
-│   └── server.py           # Flask token server (/getToken)
-│
-├── Frontend/
-│   ├── node_modules/
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── LivekitModal.jsx     # Connect modal + LiveKitRoom wrapper
-│   │   │   ├── VoiceAssistant.jsx   # Visualizer, controls, live transcript
-│   │   │   └── VoiceAssistant.css   # Voice assistant styles
-│   │   ├── App.jsx          # Landing page + "Talk to an Agent!" button
-│   │   ├── App.css          # Page styles
-│   │   ├── index.css        # Base styles
-│   │   └── main.jsx         # React entry point
-│   ├── .env                 # VITE_LIVEKIT_URL (not committed)
-│   ├── .gitignore
-│   ├── eslint.config.js
-│   ├── index.html
-│   ├── package-lock.json
-│   ├── package.json
-│   └── vite.config.js
-│
-├── Documents/
-├── venv/                    # Python virtual environment (not committed)
-├── __pycache__/
-├── .env                     # LiveKit + Google API credentials (not committed)
-├── .gitignore
-├── auto_db.sqlite           # Generated SQLite database
-├── package-lock.json
-├── requirements.txt
-└── README.md
-
-### 2. Result — Live Conversation
-
-The running application with an active voice session. The bar visualizer reflects live audio, and the transcript panel shows the full exchange: the agent welcomes the customer, offers to create a profile, then successfully looks up an existing vehicle — *"a 2019 Mercedes-Benz E-Class with the VIN V1234."*
-
 ![alt text](<example of result output  02.png>)
 
 ### 3. LiveKit Agent Connection
